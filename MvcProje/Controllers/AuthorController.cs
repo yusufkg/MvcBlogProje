@@ -16,9 +16,11 @@ namespace MvcProje.Controllers
             var authordetails = bm.GetBlogByID(id);
             return PartialView(authordetails);
         }
-        public PartialViewResult AuthorPopularPost()
+        public PartialViewResult AuthorPopularPost(int id)
         {
-            return PartialView();
+            var blogauthorid = bm.GetAll().Where(x => x.BlogID == id).Select(y => y.AuthorID).FirstOrDefault();
+            var authorsblog = bm.GetBlogByAuthor(blogauthorid);
+            return PartialView(authorsblog);
         }
     }
 }
