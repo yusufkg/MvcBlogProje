@@ -17,10 +17,10 @@ namespace MvcProje.Controllers
         {
             return View();
         }
-        public PartialViewResult BlogList(int page=1)
+        public PartialViewResult BlogList(int page = 1)
         {
 
-            var bloglist = bm.GetAll().ToPagedList(page,3);
+            var bloglist = bm.GetAll().ToPagedList(page, 3);
             return PartialView(bloglist);
         }
         public PartialViewResult FeaturedPosts()
@@ -28,7 +28,7 @@ namespace MvcProje.Controllers
             var posttitle1 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogTitle).FirstOrDefault();
             var postimage1 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogImage).FirstOrDefault();
             var blogdate1 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogDate).FirstOrDefault();
-            
+
             ViewBag.posttitle1 = posttitle1;
             ViewBag.postimage1 = postimage1;
             ViewBag.blogdate1 = blogdate1;
@@ -47,16 +47,16 @@ namespace MvcProje.Controllers
 
             ViewBag.posttitle3 = posttitle3;
             ViewBag.postimage3 = postimage3;
-            ViewBag.blogdate3 = blogdate3; 
-            
+            ViewBag.blogdate3 = blogdate3;
+
             var posttitle4 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 4).Select(y => y.BlogTitle).FirstOrDefault();
             var postimage4 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 4).Select(y => y.BlogImage).FirstOrDefault();
             var blogdate4 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 4).Select(y => y.BlogDate).FirstOrDefault();
 
             ViewBag.posttitle4 = posttitle4;
             ViewBag.postimage4 = postimage4;
-            ViewBag.blogdate4 = blogdate4; 
-            
+            ViewBag.blogdate4 = blogdate4;
+
             var posttitle5 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 5).Select(y => y.BlogTitle).FirstOrDefault();
             var postimage5 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 5).Select(y => y.BlogImage).FirstOrDefault();
             var blogdate5 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 5).Select(y => y.BlogDate).FirstOrDefault();
@@ -87,15 +87,19 @@ namespace MvcProje.Controllers
         }
         public ActionResult BlogByCategory(int id)
         {
-            var BlogListByCategory=bm.GetBlogByCategory(id);
+            var BlogListByCategory = bm.GetBlogByCategory(id);
 
             var CategoryName = bm.GetBlogByCategory(id).Select(y => y.Category.CategoryName).FirstOrDefault();
-            ViewBag.CategoryName = CategoryName; 
+            ViewBag.CategoryName = CategoryName;
 
             var CategoryDesc = bm.GetBlogByCategory(id).Select(y => y.Category.CategoryDescription).FirstOrDefault();
             ViewBag.CategoryDesc = CategoryDesc;
 
             return View(BlogListByCategory);
+        }
+        public ActionResult AdminBlogList()
+        {
+            return View();
         }
     }
 }
