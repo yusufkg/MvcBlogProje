@@ -29,5 +29,10 @@ namespace MvcProje.Controllers
             cm.CommentAdd(c);
             return PartialView();
         }
+        public ActionResult AdminCommentListTrue()
+        {
+            var commentlist = cm.CommentList();
+            return View(commentlist);
+        }
     }
 }

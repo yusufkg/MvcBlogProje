@@ -18,23 +18,27 @@ namespace MvcProje.Controllers
             var authordetails = blogmanager.GetBlogByID(id);
             return PartialView(authordetails);
         }
+
         public PartialViewResult AuthorPopularPost(int id)
         {
             var blogauthorid = blogmanager.GetAll().Where(x => x.BlogID == id).Select(y => y.AuthorID).FirstOrDefault();
             var authorsblog = blogmanager.GetBlogByAuthor(blogauthorid);
             return PartialView(authorsblog);
         }
+
         public ActionResult AuthorList()
         {
             var authorlist = authormanager.GetAll();
             return View(authorlist);
         }
+
         [HttpGet]
         public ActionResult AddAuthor()
         {
-          
+
             return View();
         }
+
         [HttpPost]
         public ActionResult AddAuthor(Author p)
         {
@@ -42,5 +46,18 @@ namespace MvcProje.Controllers
             return RedirectToAction("AuthorList");
         }
 
+        [HttpGet]
+        public ActionResult AuthorEdit(int id)
+        {
+            Author author = authormanager.FindAuthor(id);
+            return View(author);
+        }
+
+        [HttpPost]
+        public ActionResult AuthorEdit(Author p)
+        {
+            authormanager.EditAuthor(p);
+            return RedirectToAction("AuthorList");
+        }
     }
 }

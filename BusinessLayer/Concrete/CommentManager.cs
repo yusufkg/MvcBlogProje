@@ -20,6 +20,10 @@ namespace BusinessLayer.Concrete
         {
             return repocomment.List(x => x.BlogID == id);
         }
+        public List<Comment> CommentByStatusTrue()
+        {
+            return repocomment.List(x=>x.CommentStatus==true)
+        }
         public int CommentAdd(Comment c)
         {
              if (c.CommentText.Length<=4||c.CommentText.Length>=301||c.UserName==""||c.Mail==""||c.UserName.Length<=5)

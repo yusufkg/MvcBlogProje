@@ -1,12 +1,14 @@
 ﻿@model EntityLayer.Concrete.Author
 @{
-    ViewBag.Title = "AddAuthor";
+    ViewBag.Title = "AuthorEdit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 
-
 <form class="form-group container-fluid" method="post">
+    @Html.Label("ID")
+    @Html.TextBoxFor(x => x.AuthorID, new { @class = "form-control" })
+    <br />
     @Html.Label("Yazar Adı Soyadı")
     @Html.TextBoxFor(x => x.AuthorName, new { @class = "form-control" })
     <br />
