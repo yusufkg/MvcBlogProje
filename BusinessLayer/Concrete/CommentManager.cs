@@ -22,7 +22,7 @@ namespace BusinessLayer.Concrete
         }
         public List<Comment> CommentByStatusTrue()
         {
-            return repocomment.List(x=>x.CommentStatus==true)
+            return repocomment.List(x => x.CommentStatus == true);
         }
         public int CommentAdd(Comment c)
         {
