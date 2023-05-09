@@ -22,7 +22,7 @@
 
         $(document).ready(function () {
 
-                $.ajax({
+            $.ajax({
 
                 type: "POST",
 
@@ -52,6 +52,8 @@
 
         });
 
+
+
         function drawChart(result) {
 
             var data = new google.visualization.DataTable();
@@ -65,9 +67,7 @@
 
 
             $.each(result, function (i, obj) {
-
                 dataArray.push([obj.CategoryName, obj.BlogCount]);
-
             });
 
             data.addRows(dataArray);
@@ -76,11 +76,11 @@
 
             var columnChartOptions = {
 
-                title: "Ürün - Stok Grafiği",
+                title: "Kategori Blog Statik Pie Grafik",
 
                 width: 1000,
 
-                height: 400,
+                height: 600,
 
                 bar: { groupWidth: "20%" },
 

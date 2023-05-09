@@ -21,10 +21,11 @@ namespace MvcProje.Controllers
         public List<Class1> categorylist()
         {
             List<Class1> c = new List<Class1>();
+
             c.Add(new Class1()
             {
-                CategoryName="Teknoloji",
-                BlogCount=14
+                CategoryName = "Teknoloji",
+                BlogCount = 14
             });
             c.Add(new Class1()
             {
