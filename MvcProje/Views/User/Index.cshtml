@@ -1,0 +1,22 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Author>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AuthorLayout.cshtml";
+}
+
+<h2>Yazar Profil Bilgileri</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Ad Soyad</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AuthorID</td>
+            <td>@item.AuthorName</td>
+        </tr>
+    }
+
+</table>

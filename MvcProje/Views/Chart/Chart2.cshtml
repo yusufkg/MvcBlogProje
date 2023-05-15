@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Chart2";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -12,13 +12,13 @@
 
     <title>Google Grafikler</title>
 
-    <script src="/Scripts/jquery-3.4.1.min.js"></script>
-
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 
     <script>
 
@@ -32,7 +32,7 @@
 
                 contentType: "application/json",
 
-                url: '@Url.Action("VisualizeResult", "Chart")',
+                url: '@Url.Action("VisualizeResult2", "Chart")',
 
                 success: function (result) {
 
@@ -54,8 +54,6 @@
 
         });
 
-
-
         function drawChart(result) {
 
             var data = new google.visualization.DataTable();
@@ -69,7 +67,9 @@
 
 
             $.each(result, function (i, obj) {
-                dataArray.push([obj.CategoryName, obj.BlogCount]);
+
+                dataArray.push([obj.BlogName, obj.Rating]);
+
             });
 
             data.addRows(dataArray);
@@ -78,11 +78,11 @@
 
             var columnChartOptions = {
 
-                title: "Kategori Blog Statik Pie Grafik",
+                title: "Blog Derece Sütun Grafiği",
 
-                width: 1650,
+                width: 1000,
 
-                height: 1000,
+                height: 400,
 
                 bar: { groupWidth: "20%" },
 
@@ -90,7 +90,7 @@
 
 
 
-            var columnChart = new google.visualization.PieChart(document
+            var columnChart = new google.visualization.columnChart(document
 
                 .getElementById('Piechart_div'));
 
