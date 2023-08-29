@@ -12,8 +12,6 @@
 
     <title>Google Grafikler</title>
 
-    <script src="/Scripts/jquery-3.4.1.min.js"></script>
-
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -69,7 +67,9 @@
 
 
             $.each(result, function (i, obj) {
+
                 dataArray.push([obj.CategoryName, obj.BlogCount]);
+
             });
 
             data.addRows(dataArray);
@@ -80,9 +80,9 @@
 
                 title: "Kategori Blog Statik Pie Grafik",
 
-                width: 1650,
+                width: 1000,
 
-                height: 1000,
+                height: 600,
 
                 bar: { groupWidth: "20%" },
 

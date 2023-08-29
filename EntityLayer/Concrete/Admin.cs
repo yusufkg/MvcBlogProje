@@ -7,12 +7,17 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Admin
+   public class Admin
     {
         [Key]
         public int AdminID { get; set; }
+
         [StringLength(20)]
         public string UserName { get; set; }
+
+        [StringLength(1)]
+        public string AdminRole { get; set; }
+
         [StringLength(20)]
         public string Password { get; set; }
     }

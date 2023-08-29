@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,40 +10,45 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class AuthorManager
+    public class AuthorManager : IAuthorService
     {
+        IAuthorDal _authordal;
+
         Repository<Author> repoauthor = new Repository<Author>();
-       
-        public List<Author> GetAll()
+
+        public AuthorManager(IAuthorDal authordal)
         {
-            return repoauthor.List();
+            _authordal = authordal;
         }
 
-        public int AddAuthorBL (Author p)
+        public List<Author> GetList()
         {
-            if (p.AuthorName==""||p.AboutShort==""||p.AuthorTitle=="")
-            {   
-                return -1;
-            }
-            return repoauthor.Insert(p);
+            return _authordal.List();
         }
-        public Author FindAuthor(int id)
-        {
-            return repoauthor.Find(x => x.AuthorID == id);
-        }
-        public int EditAuthor(Author p)
-        {
-            Author author = repoauthor.Find(x => x.AuthorID == p.AuthorID);
 
-            author.AboutShort = p.AuthorAbout;
-            author.AuthorName = p.AuthorName;
-            author.AuthorImage = p.AuthorImage;
-            author.AuthorAbout = p.AuthorAbout;
-            author.AuthorTitle = p.AuthorTitle;
-            author.Mail = p.Mail;
-            author.Password = p.Password;
-            author.PhoneNumber = p.PhoneNumber;
-            return repoauthor.Update(author);
+        public Author GetByID(int id)
+        {
+            return _authordal.GetByID(id);
+        }
+
+        public void AuthorDelete(Author author)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TAdd(Author t)
+        {
+            _authordal.Insert(t);
+        }
+
+        public void TDelete(Author t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TUpdate(Author t)
+        {
+            _authordal.Update(t);
         }
     }
 }

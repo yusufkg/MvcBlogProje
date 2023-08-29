@@ -4,20 +4,22 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-
-
-<form class="form-group container-fluid" method="post">
+<form class="form-group" method="post">
     @Html.Label("Yazar Adı Soyadı")
     @Html.TextBoxFor(x => x.AuthorName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AuthorName)
     <br />
-    @Html.Label("Resim Yolu")
+    @Html.Label("Resim yolu")
     @Html.TextBoxFor(x => x.AuthorImage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AuthorImage)
     <br />
-    @Html.Label("Yazar Yetenekler")
+    @Html.Label("Yazar Yetenkler")
     @Html.TextBoxFor(x => x.AboutShort, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AboutShort)
     <br />
-    @Html.Label("Yazar Statü")
+    @Html.Label("Yazarın Statüsü")
     @Html.TextBoxFor(x => x.AuthorTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AuthorTitle)
     <br />
     @Html.Label("Mail Adresi")
     @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
@@ -29,7 +31,8 @@
     @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
     <br />
     @Html.Label("Hakkında")
-    @Html.TextAreaFor(x => x.AboutShort, 5, 20, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.AuthorAbout, 3, 20, new { @class = "form-control" })
     <br />
     <button class="btn btn-info">Kaydet</button>
 </form>
+

@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,23 +11,27 @@ namespace MvcProje.Controllers
 {
     public class CommentController : Controller
     {
-        CommentManager cm = new CommentManager();
         // GET: Comment
+        CommentManager cm = new CommentManager(new EfCommentDal());
+        [AllowAnonymous]
         public PartialViewResult CommentList(int id)
         {
             var commentlist = cm.CommentByBlog(id);
             return PartialView(commentlist);
         }
+        [AllowAnonymous]
         [HttpGet]
         public PartialViewResult LeaveComment(int id)
         {
             ViewBag.id = id;
             return PartialView();
         }
+        [AllowAnonymous]
         [HttpPost]
         public PartialViewResult LeaveComment(Comment c)
         {
-            cm.CommentAdd(c);
+            c.CommentStatus = true;
+            cm.TAdd(c);
             return PartialView();
         }
         public ActionResult AdminCommentListTrue()
@@ -49,7 +54,5 @@ namespace MvcProje.Controllers
             cm.CommentStatusChangeToTrue(id);
             return RedirectToAction("AdminCommentListFalse");
         }
-
-
     }
 }

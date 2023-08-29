@@ -11,15 +11,22 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int ContactID { get; set; }
+
         [StringLength(50)]
         public string Name { get; set; }
+
         [StringLength(50)]
         public string SurName { get; set; }
+
         [StringLength(50)]
         public string Mail { get; set; }
+
         [StringLength(50)]
         public string Subject { get; set; }
+
         public string Message { get; set; }
+
         public DateTime MessageDate { get; set; }
+
     }
 }

@@ -1,59 +1,60 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace BusinessLayer.Concrete
 {
-    public class BlogManager
+    public class BlogManager : IBlogService
     {
-        Repository<Blog> repoblog = new Repository<Blog>();
-        public List<Blog> GetAll()
+        IBlogDal _blogDal;
+
+        public BlogManager(IBlogDal blogDal)
         {
-            return repoblog.List();
+            _blogDal = blogDal;
         }
+
         public List<Blog> GetBlogByID(int id)
         {
-            return repoblog.List(x => x.BlogID == id);
+            return _blogDal.List(x => x.BlogID == id);
         }
+
         public List<Blog> GetBlogByAuthor(int id)
         {
-            return repoblog.List(x => x.AuthorID == id);
+            return _blogDal.List(x => x.AuthorID == id);
         }
         public List<Blog> GetBlogByCategory(int id)
         {
-            return repoblog.List(x => x.CategoryID == id);
+            return _blogDal.List(x => x.CategoryID == id);
         }
-        public int BlogAddBL(Blog p)
+
+        public List<Blog> GetList()
         {
-            if (p.BlogTitle == "" || p.BlogImage == "" || p.BlogTitle.Length <= 5 || p.BlogContent.Length <= 200)
-            {
-                return -1;
-            }
-            return repoblog.Insert(p);
+            return _blogDal.List();
         }
-        public int DeleteBlogBL(int p)
+
+        public Blog GetByID(int id)
         {
-            Blog blog = repoblog.Find(x => x.BlogID == p);
-            return repoblog.Delete(blog);
+            return _blogDal.GetByID(id);
         }
-        public Blog FindBlog(int id)
+
+        public void TAdd(Blog t)
         {
-            return repoblog.Find(x => x.BlogID == id);
+            _blogDal.Insert(t);
         }
-        public int UpdateBlog(Blog p)
+
+        public void TDelete(Blog t)
         {
-            Blog blog = repoblog.Find(x => x.BlogID == p.BlogID);
-            blog.BlogTitle = p.BlogTitle;
-            blog.BlogContent = p.BlogContent;
-            blog.BlogDate = p.BlogDate;
-            blog.BlogImage = p.BlogImage;
-            blog.Category = p.Category;
-            blog.AuthorID = p.AuthorID;
-            return repoblog.Update(blog);
+            _blogDal.Delete(t);
+        }
+
+        public void TUpdate(Blog t)
+        {
+            _blogDal.Update(t);
         }
     }
 }

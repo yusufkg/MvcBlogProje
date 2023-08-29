@@ -11,15 +11,22 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int BlogID { get; set; }
+
         [StringLength(100)]
         public string BlogTitle { get; set; }
-        [StringLength(20)]
+
+        [StringLength(100)]
         public string BlogImage { get; set; }
+
         public DateTime BlogDate { get; set; }
+
         public string BlogContent { get; set; }
+
         public int BlogRating { get; set; }
+
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
+
         public int AuthorID { get; set; }
         public virtual Author Author { get; set; }
 

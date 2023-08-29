@@ -4,9 +4,10 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
+@Html.Action("FeaturedPosts","Blog")
 
-@*@Html.Action("FeaturedPosts", "Blog")*@
-@Html.Action("BlogList", "Blog")
-@Html.Action("OtherFeaturedPosts", "Blog")
-@Html.Action("AddMail", "MailSubscribe")
-@Html.Action("Footer", "About")
+@Html.Action("BlogList","Blog")
+
+@Html.Action("AddMail","MailSubscribe")
+
+@Html.Action("Footer","About")
