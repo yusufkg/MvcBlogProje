@@ -31,7 +31,7 @@ namespace BusinessLayer.Concrete
         {
             return _blogDal.List(x => x.CategoryID == id);
         }
-
+              
         public List<Blog> GetList()
         {
             return _blogDal.List();

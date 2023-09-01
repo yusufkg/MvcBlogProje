@@ -50,24 +50,24 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            puan = item.BlogRating * 10;
+                           //puan = item.BlogRating * 10;
 
-                            if (puan >= 90)
+                            if (item.BlogRating >= 90)
                             {
                                 color = "post-category text-white bg-success mb-3";
                                 casename = "Çok iyi";
                             }
-                            if (puan >= 70 && puan <= 89)
+                            if (item.BlogRating >= 70 && item.BlogRating <= 89)
                             {
                                 color = "post-category text-white bg-info mb-3";
                                 casename = "Başarılı";
                             }
-                            if (puan >= 50 && puan <= 69)
+                            if (item.BlogRating >= 50 && item.BlogRating <= 69)
                             {
                                 color = "post-category text-warning bg-warning mb-3";
                                 casename = "Fena Değil";
                             }
-                            if (puan >= 0 && puan <= 49)
+                            if (item.BlogRating >= 0 && item.BlogRating <= 49)
                             {
                                 color = "post-category text-white bg-danger mb-3";
                                 casename = "Vasat";
@@ -78,11 +78,11 @@
                                 <td>@item.BlogTitle</td>
                                 <td class="project_progress">
                                     <div class="progress progress-sm">
-                                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10" style="width: @puan%">
+                                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10" style="width: @item.BlogRating%">
                                         </div>
                                     </div>
                                     <small>
-                                        Aldığı puan:@puan
+                                        Aldığı puan:@item.BlogRating
                                     </small>
                                 </td>
                                 <td class="project-state">
