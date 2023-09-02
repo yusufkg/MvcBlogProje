@@ -32,8 +32,7 @@ namespace MvcProje.Controllers
             return PartialView(authorblogs);
         }
 
-
-        public ActionResult AuthorList()
+          public ActionResult AuthorList()
         {
             var authorlists = authormanager.GetList();
             return View(authorlists);

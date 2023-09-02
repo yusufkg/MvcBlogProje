@@ -23,7 +23,6 @@ namespace MvcProje.Controllers
         {
             return View();
         }
-        [AllowAnonymous]
         public PartialViewResult BlogList(int page = 1)
         {
             var bloglist = bm.GetList().ToPagedList(page, 6);
