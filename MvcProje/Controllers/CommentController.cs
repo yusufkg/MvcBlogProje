@@ -34,6 +34,7 @@ namespace MvcProje.Controllers
             cm.TAdd(c);
             return PartialView();
         }
+        [AllowAnonymous]
         public ActionResult AdminCommentListTrue()
         {
             var commentlist = cm.CommentByStatusTrue();

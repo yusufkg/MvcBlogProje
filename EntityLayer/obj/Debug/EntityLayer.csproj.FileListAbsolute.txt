@@ -22,3 +22,15 @@ G:\ykg\github\MvcblogProjemy\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompil
 G:\ykg\github\MvcblogProjemy\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
 G:\ykg\github\MvcblogProjemy\EntityLayer\obj\Debug\EntityLayer.dll
 G:\ykg\github\MvcblogProjemy\EntityLayer\obj\Debug\EntityLayer.pdb
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\bin\Debug\EntityLayer.dll
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\bin\Debug\EntityLayer.pdb
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\bin\Debug\EntityFramework.dll
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\bin\Debug\EntityFramework.xml
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\obj\Debug\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\obj\Debug\EntityLayer.dll
+C:\Users\yusuf\OneDrive\Masaüstü\yusuf\Github\MvcBlogProje\EntityLayer\obj\Debug\EntityLayer.pdb
