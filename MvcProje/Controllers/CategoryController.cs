@@ -23,7 +23,6 @@ namespace MvcProje.Controllers
             var categoryvalues = cm.GetList();
             return PartialView(categoryvalues);
         }
-        [AllowAnonymous]
         public ActionResult AdminCategoryList()
         {
             var categorylist = cm.GetList();

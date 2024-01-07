@@ -12,20 +12,20 @@ using System.Web.Mvc;
 
 namespace MvcProje.Controllers
 {
-    [AllowAnonymous]
     public class BlogController : Controller
     {
         // GET: Blog
         BlogManager bm = new BlogManager(new EfBlogDal());
         CommentManager cm = new CommentManager(new EfCommentDal());
 
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
         public PartialViewResult BlogList(int page = 1)
         {
-            var bloglist = bm.GetList().ToPagedList(page, 9);
+            var bloglist = bm.GetList().ToPagedList(page, 6);
             return PartialView(bloglist);
         }
         [AllowAnonymous]

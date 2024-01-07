@@ -47,7 +47,6 @@ namespace MvcProje.Controllers
             }
             return View();
         }
-        [AllowAnonymous]
         public ActionResult SendBox()
         {
             var messagelist = cm.GetList();

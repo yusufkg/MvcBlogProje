@@ -18,10 +18,6 @@ namespace BusinessLayer.Concreterepo
         {
             _categoryDal = categoryDal;
         }
-        public List<Category> GetAll()
-        {
-            return _categoryDal.List();
-        }
 
         public void CategoryStatusFalseBL(int id)
         {
