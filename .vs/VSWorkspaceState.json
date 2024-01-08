@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MvcProje",
+    "\\MvcProje\\Views",
+    "\\MvcProje\\Views\\Login"
   ],
-  "SelectedNode": "\\MvcProje.sln",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }
